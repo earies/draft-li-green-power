@@ -1,0 +1,30 @@
+<hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+  <component>
+    <name>CHASSIS0</name>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:chassis</class>
+    <contains-child>CHASSIS0:FPC0</contains-child>
+    <contains-child>CHASSIS0:FPC1</contains-child>
+  </component>
+  <component>
+    <name>CHASSIS0:FPC0</name>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:module</class>
+    <parent>CHASSIS0</parent>
+    <power xmlns="urn:ietf:params:xml:ns:yang:ietf-green-power">
+      <used-power>1000</used-power>
+      <power-save-capable>true</power-save-capable>
+      <power-save>false</power-save>
+      <required-components>CHASSIS0</required-components>
+    </power>
+  </component>
+  <component>
+    <name>CHASSIS0:FPC1</name>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:module</class>
+    <parent>CHASSIS0</parent>
+    <power xmlns="urn:ietf:params:xml:ns:yang:ietf-green-power">
+      <used-power>1000</used-power>
+      <power-save-capable>true</power-save-capable>
+      <power-save>false</power-save>
+      <required-components>CHASSIS0</required-components>
+    </power>
+  </component>
+</hardware>

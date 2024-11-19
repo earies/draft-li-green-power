@@ -1,0 +1,81 @@
+module ietf-green-power {
+  yang-version 1.1;
+  namespace "urn:ietf:params:xml:ns:yang:ietf-green-power";
+  prefix gp;
+
+  import ietf-hardware {
+    prefix hw;
+  }
+
+  organization
+    "";
+
+  contact
+    "";
+
+  description
+    "";
+
+  revision 2024-11-19 {
+    description
+      "Initial version";
+    reference
+      "RFC XXXX: A YANG model for Power Management";
+  }
+
+  grouping power-attributes {
+    description
+      "";
+
+    leaf used-power {
+      type uint32;
+      units milliwatts;
+      description
+        "";
+    }
+
+    leaf power-save-capable {
+      type boolean;
+      description
+        "";
+    }
+
+    leaf power-save {
+      type boolean;
+      description
+        "";
+    }
+
+    leaf-list required-components {
+      type leafref {
+        path "../../../hw:component/hw:name";
+      }
+      description
+        "";
+    }
+
+    leaf-list dependent-components {
+      type leafref {
+        path "../../../hw:component/hw:name";
+      }
+      description
+        "";
+    }
+  }
+
+  grouping power-top {
+    description
+      "";
+
+    container power {
+      description
+        "";
+
+      uses power-attributes;
+    }
+  }
+
+  augment "/hw:hardware/hw:component" {
+    uses power-top;
+  }
+}
