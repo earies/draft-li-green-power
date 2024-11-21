@@ -59,6 +59,7 @@ module ietf-green-power {
 
     leaf used-power {
       type uint32;
+      config false;
       units milliwatts;
       description
         "";
@@ -66,6 +67,7 @@ module ietf-green-power {
 
     leaf power-save-capable {
       type boolean;
+      config false;
       description
         "";
     }
@@ -80,6 +82,7 @@ module ietf-green-power {
       type leafref {
         path "../../../hw:component/hw:name";
       }
+      config false;
       description
         "";
     }
@@ -88,6 +91,7 @@ module ietf-green-power {
       type leafref {
         path "../../../hw:component/hw:name";
       }
+      config false;
       description
         "";
     }
